@@ -1,3 +1,4 @@
 return {
-  ensure_installed = { "help", "lua", "rust", "python", "javascript", "typescript" },
+  auto_install = vim.fn.executable "tree-sitter" == 1,
+  ensure_installed = { "help", "lua", "python", "rust" },
 }

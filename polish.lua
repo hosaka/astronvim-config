@@ -14,4 +14,6 @@ return function()
   --     ["~/%.config/foo/.*"] = "fooscript",
   --   },
   -- }
+  require "user.autocmds"
 end
+

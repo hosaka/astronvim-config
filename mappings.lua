@@ -1,16 +1,17 @@
--- Mapping data with "desc" stored directly by vim.keymap.set().
--- Please use this mappings table to set keyboard mapping since this is the
--- lower level configuration and more robust one. (which-key will
--- automatically pick-up stored data by this setting.)
 return {
-  -- first key is the mode
   n = {
+    -- first key is the mode
     -- second key is the lefthand side of the map
+    -- disable default bindings
+    ["<C-q>"] = false,
+    ["<C-s>"] = false,
+
     -- mappings seen under group name "Buffer"
     ["<leader>bb"] = { "<cmd>tabnew<cr>", desc = "New tab" },
     ["<leader>bc"] = { "<cmd>BufferLinePickClose<cr>", desc = "Pick to close" },
     ["<leader>bj"] = { "<cmd>BufferLinePick<cr>", desc = "Pick to jump" },
     ["<leader>bt"] = { "<cmd>BufferLineSortByTabs<cr>", desc = "Sort by tabs" },
+
     -- quick save
     -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
   },

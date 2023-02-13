@@ -1,7 +1,7 @@
 return {
   "folke/which-key.nvim",
-  config = function(_, opts)
-    -- require "plugins.configs.which-key"(plugin, opts)
+  config = function(plugin, opts)
+    require "plugins.configs.which-key"(plugin, opts)
     local wk = require "which-key"
     wk.register({
       z = { "<cmd>ZenMode<cr>", "Zen Mode" },

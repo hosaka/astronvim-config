@@ -14,7 +14,6 @@ return {
   g = {
     mapleader = " ", -- sets vim.g.mapleader
 
-    heirline_bufferline = true, -- enable new heirline based bufferline (requires :PackerSync after changing)
     icons_enabled = true, -- disable icons in the UI (disable if no nerd font is available, requires :PackerSync after changing)
   },
 }

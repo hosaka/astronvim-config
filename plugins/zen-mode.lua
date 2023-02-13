@@ -48,4 +48,8 @@ function M.config()
   end
 end
 
-return M
+return {
+  "folke/zen-mode.nvim",
+  cmd = { "ZenMode" },
+  config = function(_, opts) M.config() end,
+}

@@ -1,12 +1,12 @@
--- customize mason plugins
 return {
+  -- You can disable default plugins as follows:
+  -- {"goolord/alpha-nvim", enabled = false},
   -- use mason-lspconfig to configure LSP installations
   {
     "williamboman/mason-lspconfig.nvim",
     -- overrides `require("mason-lspconfig").setup(...)`
     opts = {
-      automatic_installation = false,
-      ensure_installed = { "sumneko_lua", "pyright", "rust_analyzer" },
+      ensure_installed = { "lua_ls", "pyright", "rust_analyzer", "yamlls" },
     },
   },
   -- use mason-null-ls to configure Formatters/Linter installation for null-ls sources
@@ -21,7 +21,7 @@ return {
     "jay-babu/mason-nvim-dap.nvim",
     -- overrides `require("mason-nvim-dap").setup(...)`
     opts = {
-      -- ensure_installed = { "python" },
+      ensure_installed = { "python" },
     },
   },
 }

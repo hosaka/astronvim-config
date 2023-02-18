@@ -9,8 +9,6 @@ return {
     -- mappings seen under group name "Buffer"
     -- ["<leader>bb"] = { "<cmd>tabnew<cr>", desc = "New tab" },
 
-    -- quick save
-    -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
     ["J"] = { "mzJ`z", desc = "Join lines" },
   },
   t = {

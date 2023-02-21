@@ -16,7 +16,7 @@ return {
       desc = "Next buffer",
     },
     ["<S-h>"] = {
-      function() require("core.utils.buffer").nav( -(vim.v.count > 0 and vim.v.count or 1)) end,
+      function() require("core.utils.buffer").nav(-(vim.v.count > 0 and vim.v.count or 1)) end,
       desc = "Previous buffer",
     },
 

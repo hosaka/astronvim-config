@@ -8,8 +8,8 @@ return {
       -- * an absolute number of cells when > 1
       -- * a percentage of the width / height of the editor when <= 1
       -- * a function that returns the width or the height
-      width = function() return math.min(120, vim.o.columns * 0.75) end,
-      height = 0.95,
+      width = function() return math.min(140, vim.o.columns * 0.75) end,
+      height = 1,
       options = {
         list = false,
         number = false,

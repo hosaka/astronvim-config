@@ -5,7 +5,7 @@ return {
   },
   opts = {
     auto_install = vim.fn.executable "tree-sitter" == 1,
-    ensure_installed = { "help", "lua", "python", "rust", "yaml", "dockerfile" },
+    ensure_installed = { "lua", "python", "rust", "yaml", "dockerfile" },
     matchup = { enable = true },
   },
 }

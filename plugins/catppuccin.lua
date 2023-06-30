@@ -3,7 +3,7 @@ return {
   name = "catppuccin",
   opts = {
     flavour = "frappe",
-    dim_inactive = { enabled = true, percentage = 0.15 },
+    dim_inactive = { enabled = true, percentage = 0.1 },
     integrations = {
       alpha = false,
       dashboard = false,
@@ -23,7 +23,7 @@ return {
       notify = true,
       semantic_tokens = true,
       symbols_outline = true,
-      telescope = { enabled = true, style = "nvchad" },
+      telescope = { enabled = true },
       which_key = true,
     },
     custom_highlights = {

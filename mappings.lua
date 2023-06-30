@@ -1,3 +1,4 @@
+local astro_utils = require "astronvim.utils"
 return {
   n = {
     -- disable default bindings
@@ -16,25 +17,43 @@ return {
       desc = "Next buffer",
     },
     ["<S-h>"] = {
-      function() require("astronvim.utils.buffer").nav( -(vim.v.count > 0 and vim.v.count or 1)) end,
+      function() require("astronvim.utils.buffer").nav(-(vim.v.count > 0 and vim.v.count or 1)) end,
       desc = "Previous buffer",
     },
 
-    -- mappings seen under group name "Buffer"
-    -- ["<leader>bb"] = { "<cmd>tabnew<cr>", desc = "New tab" },
+    ["<Tab>"] = {
+      function()
+        if #vim.t.bufs > 1 then
+          require("telescope.builtin").buffers { sort_mru = true, ignore_current_buffer = true }
+        else
+          astro_utils.notify "No other buffers open"
+        end
+      end,
+      desc = "Switch Buffers",
+    },
 
     -- join and preserve cursor position
     ["J"] = { "mzJ`z", desc = "Join lines" },
 
-    -- compiler
-    -- ["<leader>m"] = { name = "Compiler" },
+    -- ["<leader>;"] = { desc = "AI Assistant" },
+    -- ["<leader>;;"] = {
+    --   function()
+    --     vim.cmd.Codeium(vim.g.codeium_enabled == 0 and "Enable" or "Disable")
+    --     astro_utils.notify("Codeium " .. (vim.g.codeium_enabled == 0 and "Disabled" or "Enabled"))
+    --   end,
+    --   desc = "Toggle Global",
+    -- },
+    -- ["<leader>;b"] = {
+    --   function()
+    --     vim.cmd.Codeium(vim.b.codeium_enabled == 0 and "EnableBuffer" or "DisableBuffer")
+    --     astro_utils.notify("Codeium (buffer) " .. (vim.b.codeium_enabled == 0 and "Disabled" or "Enabled"))
+    --   end,
+    --   desc = "Toggle Buffer",
+    -- },
   },
   t = {
     -- terminal
     ["<esc><esc>"] = { "<C-\\><C-n>:q<cr>", desc = "Terminal quit" },
   },
-  v = {
-    ["J"] = { ":m '>+1<cr>gv=gv", desc = "Move selection up" },
-    ["K"] = { ":m '<-2<cr>gv=gv", desc = "Move selection down" },
-  },
+  v = {},
 }

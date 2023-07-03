@@ -32,6 +32,21 @@ return {
       desc = "Switch Buffers",
     },
 
+    ["<leader>s"] = { desc = "󰛔 Search/Replace" },
+    ["<leader>ss"] = { function() require("spectre").toggle() end, desc = "Toggle Spectre" },
+    ["<leader>sf"] = { function() require("spectre").open_file_search() end, desc = "Spectre (current file)" },
+    ["<leader>sw"] = {
+      function() require("spectre").open_visual { select_word = true } end,
+      desc = "Spectre (current word)",
+    },
+
+    ["<leader>x"] = { desc = "󰒡 Trouble" },
+    ["<leader>xx"] = { "<cmd>TroubleTogle document_diagnostics<cr>", desc = "Document Diagnostics (Trouble)" },
+    ["<leader>xX"] = { "<cmd>TroubleToggle workspace_diagnostics<cr>", desc = "Workspace Diagnostics (Trouble)" },
+    ["<leader>xl"] = { "<cmd>TroubleToggle loclist<cr>", desc = "Location List (Trouble)" },
+    ["<leader>xq"] = { "<cmd>TroubleToggle quickfix<cr>", desc = "Quickfix List (Trouble)" },
+    ["<leader>xT"] = { "<cmd>TodoTrouble<cr>", desc = "TODOs (Trouble)" },
+
     -- join and preserve cursor position
     ["J"] = { "mzJ`z", desc = "Join lines" },
 

@@ -32,6 +32,9 @@ return {
       desc = "Switch Buffers",
     },
 
+    -- neogit
+    ["<leader>gG"] = { function() require("neogit").open() end, desc = "Neogit" },
+
     ["<leader>s"] = { desc = "󰛔 Search/Replace" },
     ["<leader>ss"] = { function() require("spectre").toggle() end, desc = "Toggle Spectre" },
     ["<leader>sf"] = { function() require("spectre").open_file_search() end, desc = "Spectre (current file)" },

@@ -27,4 +27,12 @@ return function()
       cache_enabled = 0,
     }
   end
+
+  if vim.g.neovide then
+    vim.o.guifont = "FiraCode Nerd Font:h11"
+
+    -- floating and popup transparency
+    vim.o.winblend = 30
+    vim.o.pumblend = 30
+  end
 end

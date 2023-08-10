@@ -29,11 +29,25 @@ return {
           astro_utils.notify "No other buffers open"
         end
       end,
-      desc = "Switch Buffers",
+      desc = "Switch buffers",
+    },
+
+    -- scaling up/down
+    ["<leader>="] = {
+      function()
+        if vim.g.neovide then vim.g.neovide_scale_factor = vim.g.neovide_scale_factor * 1.25 end
+      end,
+      desc = "Scale up",
+    },
+    ["<leader>-"] = {
+      function()
+        if vim.g.neovide then vim.g.neovide_scale_factor = vim.g.neovide_scale_factor * 1 / 1.25 end
+      end,
+      desc = "Scale down",
     },
 
     -- neogit
-    ["<leader>gG"] = { function() require("neogit").open() end, desc = "Neogit" },
+    ["<leader>gG"] = { function() require("neogit").open {} end, desc = "Neogit" },
 
     ["<leader>s"] = { desc = "󰛔 Search/Replace" },
     ["<leader>ss"] = { function() require("spectre").toggle() end, desc = "Toggle Spectre" },

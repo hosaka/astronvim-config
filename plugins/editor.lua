@@ -10,6 +10,20 @@ return {
     opts = {},
   },
   {
+    "echasnovski/mini.surround",
+    -- todo: fix keymap overlap with flash plugin
+    enabled = false,
+    keys = {
+      { "sa", desc = "Add surrounding", mode = { "n", "v" } },
+      { "sd", desc = "Delete surrounding" },
+      { "sf", desc = "Find right surrounding" },
+      { "sF", desc = "Find left surrounding" },
+      { "sh", desc = "Highlight surrounding" },
+      { "sr", desc = "Replace surrounding" },
+    },
+    opts = { n_lines = 200 },
+  },
+  {
     "arsham/indent-tools.nvim",
     dependencies = { "arsham/arshlib.nvim" },
     event = "User AstroFile",
